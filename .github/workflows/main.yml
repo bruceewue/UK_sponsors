@@ -3,7 +3,7 @@ name: Data Crawler
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '50 * * * *'  # once a day
+    - cron:  '0 0 * * *'  # once a day
 permissions:
   contents: write
 jobs:
