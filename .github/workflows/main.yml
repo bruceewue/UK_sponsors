@@ -3,7 +3,7 @@ name: Data Crawler
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '35 * * * *'  # once a day
+    - cron:  '50 * * * *'  # once a day
 
 jobs:
   build:
@@ -29,8 +29,8 @@ jobs:
 
     - name: Commit and push if it changed
       run: |
-        git config --local user.email "bruceewue@gmail.com"
-        git config --local user.name "Bruce Wu"
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
         git add -A
         git diff --quiet && git diff --staged --quiet || git commit -m "Updated data"
-        git push
+        git push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:maingit push https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
