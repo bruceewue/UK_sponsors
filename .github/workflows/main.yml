@@ -1,8 +1,9 @@
 name: Data Crawler
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron:  '25 * * * *'  # once a day
+    - cron:  '35 * * * *'  # once a day
 
 jobs:
   build:
