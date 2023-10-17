@@ -11,7 +11,7 @@ links = soup.select('a.govuk-link')
 csv_link = None
 for link in links:
     href = link.get('href')
-    if href and href.startswith('https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file'):
+    if href and 'Worker_and_Temporary_Worker.csv' in href:
         csv_link = href
         break
 
